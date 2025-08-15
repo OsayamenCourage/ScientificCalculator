@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta tags for proper rendering and mobile responsiveness -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Scientific Calculator</title>
+
+  <!-- Link to external CSS in the css/ folder -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- App container -->
+  <div class="calculator">
+    <!-- Display area: history (top) + current (bottom) -->
+    <div class="display">
+      <!-- Shows the expression being built -->
+      <div id="history" class="display-history" aria-live="polite"></div>
+      <!-- Shows the current entry or result -->
+      <div id="result" class="display-result" aria-live="polite">0</div>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+      <!-- Row: angle mode, memory, clear, delete -->
+      <button class="btn secondary" id="angle-toggle" data-type="mode">DEG</button>
+      <button class="btn secondary" data-type="memory" data-value="MC" title="Memory Clear">MC</button>
+      <button class="btn secondary" data-type="memory" data-value="MR" title="Memory Recall">MR</button>
+      <button class="btn secondary" data-type="memory" data-value="M+" title="Memory Add">M+</button>
+      <button class="btn secondary" data-type="memory" data-value="M-" title="Memory Subtract">M-</button>
+      <button class="btn warn" data-type="clear" data-value="AC" title="All Clear">AC</button>
+      <button class="btn warn" data-type="backspace" title="Delete last">DEL</button>
+
+      <!-- Row: functions and constants -->
+      <button class="btn function" data-type="func" data-value="sin(" title="Sine">sin</button>
+      <button class="btn function" data-type="func" data-value="cos(" title="Cosine">cos</button>
+      <button class="btn function" data-type="func" data-value="tan(" title="Tangent">tan</button>
+      <button class="btn function" data-type="func" data-value="ln(" title="Natural log">ln</button>
+      <button class="btn function" data-type="func" data-value="log(" title="Log base 10">log</button>
+      <button class="btn function" data-type="func" data-value="√(" title="Square root">√</button>
+      <button class="btn function" data-type="operator" data-value="^" title="Power">x^y</button>
+      <button class="btn function" data-type="const" data-value="π" title="Pi">π</button>
+      <button class="btn function" data-type="const" data-value="e" title="Euler's number">e</button>
+      <button class="btn function" data-type="postfix" data-value="!" title="Factorial">x!</button>
+
+      <!-- Row: parentheses and percent -->
+      <button class="btn" data-type="paren" data-value="(">(</button>
+      <button class="btn" data-type="paren" data-value=")">)</button>
+      <button class="btn" data-type="percent" title="Percent">%</button>
+      <button class="btn" data-type="sign" title="Toggle sign">±</button>
+
+      <!-- Row: digits and operators -->
+      <button class="btn" data-type="digit" data-value="7">7</button>
+      <button class="btn" data-type="digit" data-value="8">8</button>
+      <button class="btn" data-type="digit" data-value="9">9</button>
+      <button class="btn operator" data-type="operator" data-value="÷">÷</button>
+
+      <button class="btn" data-type="digit" data-value="4">4</button>
+      <button class="btn" data-type="digit" data-value="5">5</button>
+      <button class="btn" data-type="digit" data-value="6">6</button>
+      <button class="btn operator" data-type="operator" data-value="×">×</button>
+
+      <button class="btn" data-type="digit" data-value="1">1</button>
+      <button class="btn" data-type="digit" data-value="2">2</button>
+      <button class="btn" data-type="digit" data-value="3">3</button>
+      <button class="btn operator" data-type="operator" data-value="-">−</button>
+
+      <button class="btn" data-type="digit" data-value="0">0</button>
+      <button class="btn" data-type="dot" data-value=".">.</button>
+      <button class="btn operator" data-type="operator" data-value="+">+</button>
+      <button class="btn equals" data-type="equals">=</button>
+    </div>
+  </div>
+
+  <!-- Link to external JS in the js/ folder (defer ensures DOM is loaded first) -->
+  <script defer src="js/app.js"></script>
+</body>
+</html>
